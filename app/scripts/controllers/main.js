@@ -8,9 +8,9 @@
  * Controller of the stockDogApp
  */
 angular.module('stockDogApp')
-	.controller('MainCtrl', function ($scope, $location, WatchlistService) {
+	.controller('MainCtrl', function ($scope, $location, WatchlistService, HTTP_PREFIX) {
 		$scope.watchlists = WatchlistService.query();
-
+		$scope.HTTP_PREFIX = HTTP_PREFIX;
 		$scope.$watch(function(){
 			return $location.path();
 		}, function(path){

@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
   .module('stockDogApp', [
     'ngAnimate',
@@ -20,24 +21,25 @@ angular
     'ngTouch',
     'mgcrea.ngStrap'
   ])
-  .config(function ($routeProvider) {
+  .constant('HTTP_PREFIX', (window.location.hostname.indexOf('github.io') > 0) ? '/StockDog' : '')
+  .config(function ($routeProvider, HTTP_PREFIX) {
     $routeProvider
-      .when('/dashboard', {
+      .when( HTTP_PREFIX + '/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl',
         controllerAs: 'dashboard'
       })
-      .when('/watchlist/:listId', {
+      .when( HTTP_PREFIX + '/watchlist/:listId', {
         templateUrl: 'views/watchlist.html',
         controller: 'WatchlistCtrl',
         controllerAs: 'watchlist'
       })
-      .when('/charttest', {
+      .when( HTTP_PREFIX + '/charttest', {
         templateUrl: 'views/charttest.html',
         controller: 'CharttestCtrl',
         controllerAs: 'charttest'
       })
       .otherwise({
-        redirectTo: 'dashboard'
+        redirectTo: HTTP_PREFIX + '/dashboard'
       });
   });
