@@ -24,8 +24,6 @@ angular.module('stockDogApp')
 					}
 				});
 
-				console.log('table scope', $scope);
-
 				this.addRow = function(row){
 					rows.push(row);
 				};

@@ -13,7 +13,6 @@ angular.module('stockDogApp')
 		var BASE = 'http://query.yahooapis.com/v1/public/yql';
 
 		var update = function(quotes){
-			console.log(quotes);
 			if(quotes.length === stocks.length){
 				_.each( quotes, function(quote, idx){
 					var stock = stocks[idx];

@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="main-nav">
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-class="{active: activeView === 'dashboard'}">
-                            <a href="/">Dashboard</a>
+                            <a href="/#/dashboard">Dashboard</a>
                         </li>
                         <li ng-class="{active: activeView === 'watchlist'}" class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">
@@ -76,6 +76,7 @@
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-aria/angular-aria.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-google-chart/ng-google-chart.js"></script>
         <script src="bower_components/angular-messages/angular-messages.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
@@ -99,6 +100,10 @@
         <script src="scripts/services/quote-service.js"></script>
         <script src="scripts/directives/stk-stock-table.js"></script>
         <script src="scripts/directives/stk-stock-row.js"></script>
+        <script src="scripts/directives/contenteditable.js"></script>
+        <script src="scripts/directives/stk-sign-color.js"></script>
+        <script src="scripts/directives/stk-sign-fade.js"></script>
+        <script src="scripts/controllers/charttest.js"></script>
         <!-- endbuild -->
     </body>
 </html>

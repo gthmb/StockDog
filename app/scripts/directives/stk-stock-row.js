@@ -23,7 +23,6 @@ angular.module('stockDogApp')
 
 				stockTableCtrl.addRow($scope);
 
-				console.log('stock row link... registering a stock');
 				QuoteService.register($scope.stock);
 
 				$scope.$on('$destroy', function(){
@@ -32,7 +31,6 @@ angular.module('stockDogApp')
 				});
 
 				if($scope.isLast){
-					console.log('is last row,,, fetch');
 					$timeout(QuoteService.fetch);
 				}
 

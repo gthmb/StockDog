@@ -10,11 +10,9 @@
 angular.module('stockDogApp')
   .controller('WatchlistCtrl', function ($scope, $routeParams, $modal, WatchlistService, CompanyService) {
     $scope.companies = CompanyService.query();
-    $scope.watchlist = WatchlistService.query($routeParams.listId);
-    $scope.stocks = $scope.watchlist.stocks;
+    $scope.watchlist2 = WatchlistService.query($routeParams.listId);
+    $scope.stocks = $scope.watchlist2.stocks;
     $scope.newStock = {};
-
-    console.log('initing', $scope.watchlist);
 
     var addStockModal = $modal({
     	scope: $scope,
@@ -27,10 +25,7 @@ angular.module('stockDogApp')
     };
 
     $scope.addStock = function(){
-    	// not sure why i have to re-declare this...
-    	$scope.watchlist = WatchlistService.query($routeParams.listId);
-
-    	$scope.watchlist.addStock({
+    	$scope.watchlist2.addStock({
     		listId: $routeParams.listId,
     		company: $scope.newStock.company,
     		shares: $scope.newStock.shares

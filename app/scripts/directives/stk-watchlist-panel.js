@@ -11,35 +11,35 @@ angular.module('stockDogApp')
 		return {
 			templateUrl: 'views/templates/watchlist-panel.html',
 			restrict: 'E',
-			link: function postLink(scope) {
-				scope.watchlist = {};
+			link: function postLink($scope) {
+				$scope.watchlist = {};
 
 				var addListModal = $modal({
-					scope: scope,
+					scope: $scope,
 					templateUrl: 'views/templates/addlist-modal.html',
 					show: false
 				});
 
-				scope.watchlists = WatchlistService.query();
+				$scope.watchlists = WatchlistService.query();
 
-				scope.showModal = function(){
+				$scope.showModal = function(){
 					addListModal.$promise.then(addListModal.show);
 				};
 
-				scope.createList = function(){
-					WatchlistService.save(scope.watchlist);
+				$scope.createList = function(){
+					WatchlistService.save($scope.watchlist);
 					addListModal.hide();
-					scope.watchlist = {};
+					$scope.watchlist = {};
 				};
 
-				scope.deleteList = function(list){
+				$scope.deleteList = function(list){
 					WatchlistService.remove(list);
 					$location.path('/');
 				};
 
-				scope.currentList = $routeParams.listId;
+				$scope.currentList = $routeParams.listId;
 
-				scope.gotoList = function(listId){
+				$scope.gotoList = function(listId){
 					$location.path('watchlist/' + listId);
 				};
 			}

@@ -32,6 +32,11 @@ angular
         controller: 'WatchlistCtrl',
         controllerAs: 'watchlist'
       })
+      .when('/charttest', {
+        templateUrl: 'views/charttest.html',
+        controller: 'CharttestCtrl',
+        controllerAs: 'charttest'
+      })
       .otherwise({
         redirectTo: 'dashboard'
       });
