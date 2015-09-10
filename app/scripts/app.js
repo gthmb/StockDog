@@ -24,22 +24,22 @@ angular
   .constant('HTTP_PREFIX', (window.location.hostname.indexOf('github.io') > 0) ? '/StockDog' : '')
   .config(function ($routeProvider, HTTP_PREFIX) {
     $routeProvider
-      .when( HTTP_PREFIX + '/dashboard', {
+      .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl',
         controllerAs: 'dashboard'
       })
-      .when( HTTP_PREFIX + '/watchlist/:listId', {
+      .when('/watchlist/:listId', {
         templateUrl: 'views/watchlist.html',
         controller: 'WatchlistCtrl',
         controllerAs: 'watchlist'
       })
-      .when( HTTP_PREFIX + '/charttest', {
+      .when('/charttest', {
         templateUrl: 'views/charttest.html',
         controller: 'CharttestCtrl',
         controllerAs: 'charttest'
       })
       .otherwise({
-        redirectTo: HTTP_PREFIX + '/dashboard'
+        redirectTo: '/dashboard'
       });
   });
